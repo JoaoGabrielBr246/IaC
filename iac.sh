@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Função para criar grupo
 criar_grupo() {
     echo "Digite o nome do grupo:"
     read nome_grupo
@@ -8,7 +7,6 @@ criar_grupo() {
     echo "Grupo '$nome_grupo' criado com sucesso!"
 }
 
-# Função para criar usuário
 criar_usuario() {
     echo "Digite o nome do usuário:"
     read nome_usuario
@@ -18,7 +16,6 @@ criar_usuario() {
     echo "Usuário '$nome_usuario' criado com sucesso!"
 }
 
-# Função para criar diretório
 criar_diretorio() {
     echo "Digite o nome do diretório para o usuário (ex: /home/$1/projetos):"
     read dir_usuario
@@ -26,7 +23,6 @@ criar_diretorio() {
     echo "Diretório '$dir_usuario' criado com sucesso!"
 }
 
-# Função para definir permissões
 configurar_permissoes() {
     echo "Digite o diretório para definir permissões (ex: /home/$1):"
     read dir_permissoes
@@ -36,28 +32,24 @@ configurar_permissoes() {
     echo "Permissões $permissoes definidas para '$dir_permissoes'."
 }
 
-# Perguntar se deseja criar grupo
 echo "Você deseja criar um grupo? (s/n)"
 read resposta
 if [ "$resposta" == "s" ]; then
     criar_grupo
 fi
 
-# Perguntar se deseja criar usuário
 echo "Você deseja criar um usuário? (s/n)"
 read resposta
 if [ "$resposta" == "s" ]; then
     criar_usuario
 fi
 
-# Perguntar se deseja criar diretório
 echo "Você deseja criar diretório para o usuário? (s/n)"
 read resposta
 if [ "$resposta" == "s" ]; then
     criar_diretorio $nome_usuario
 fi
 
-# Perguntar se deseja configurar permissões
 echo "Você deseja configurar permissões para os diretórios? (s/n)"
 read resposta
 if [ "$resposta" == "s" ]; then
@@ -65,4 +57,3 @@ if [ "$resposta" == "s" ]; then
 fi
 
 echo "Script executado com sucesso!"
-
